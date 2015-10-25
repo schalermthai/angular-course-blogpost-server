@@ -1,0 +1,12 @@
+{
+  "name": "myBlog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Salah Chalermthai",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.7.1",
+    "express": "^4.13.3"
+  }
+}
