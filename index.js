@@ -11,6 +11,13 @@ app.get('/blogs', function(req, res, next){
   res.json(blogs);
 });
 
+app.post('/blogs', function(req, res, next){
+  var post = req.body;
+  post.id = blogs.length;
+  blogs.push(post);
+  res.json(post);
+});
+
 app.get('/blogs/:id', function(req, res, next){
   if (blogs[req.params.id]) {
     res.json(blogs[req.params.id]);
@@ -29,23 +36,21 @@ app.put('/blogs/:id', function(req, res, next){
   }
 });
 
-app.listen(3000, function(){
-  console.log('CORS-enabled web server listening on port 3000');
+app.listen(4000, function(){
+  console.log('CORS-enabled web server listening on port 4000');
 });
 
-var blogs = {
-  1: {
-    id: 1,
+var blogs = [{
+    id: 0,
     title: 'hello world',
     post: 'my first blog post',
     timestamp: new Date(),
     author: 'James Dean'
   },
-  2: {
-    id: 2,
+  {
+    id: 1,
     title: 'how to get started with angularjs',
     post: 'best way to get started with AngularJs is through using of Yeoman',
     timestamp: new Date(),
     author: 'James Dean'
-  },
-}
+  }]
